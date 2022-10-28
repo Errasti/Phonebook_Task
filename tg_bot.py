@@ -21,8 +21,8 @@ def imp_db(msg: telebot.types.Message):          # текста, в нужном
     downloaded_file = bot.download_file(file.file_path) # данными - невозможно
     with open(msg.document.file_name, 'wb') as f_out:
         f_out.write(downloaded_file)
-    bot.send_message(msg.chat.id, downloaded_file)
     dict_list = idd(msg.document.file_name)
+    bot.send_message(msg.chat.id, downloaded_file)
 
 @bot.message_handler(commands=['help'])
 def help(message):
